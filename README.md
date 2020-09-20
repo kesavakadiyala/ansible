@@ -3,6 +3,7 @@
 Generating key in master and adding key in worker/agent nodes.
 
 *********************MASTER SERVER******************
+
 centos@Master ~$ pwd
 /home/centos
 centos@Master ~$ ssh-keygen -f devops  
@@ -13,6 +14,7 @@ centos@Master ~$ cat devops.pub
 #Copy content in pub file
 
 *********************WORKER/AGENT SERVER******************
+
 centos@Worker ~$ pwd
 /home/centos
 centos@Worker ~$ cd .ssh
@@ -20,6 +22,7 @@ centos@Worker ~$ vi authorized_keys
 #Paste the content which you coppied from master server devops.pub file.
 
 *********************MASTER SERVER******************
+
 centos@Master ~$pwd
 /home/centos
 centos@Master ~$ ssh -i devops <workerip>
