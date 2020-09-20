@@ -19,7 +19,7 @@
   tasks:
     - name: Accessing file level Variable
       debug:
-        msg: {{URL}}
+        msg: URL = {{URL}}
 
 #Priority of Variables
 #Lower the number Higher the priority.
