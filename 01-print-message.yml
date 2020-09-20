@@ -1,4 +1,6 @@
-- name: Printing Message
+- name: Printing Message Play
   hosts: web
-  debug:
-    msg: Hello World!!
+  tasks:
+    - name: Printing Hello World!!
+    debug:
+      msg: Hello World!!
