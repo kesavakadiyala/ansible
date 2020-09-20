@@ -4,5 +4,7 @@
     URL: play-level-variable #Declaring play level variable
   tasks:
     - name: Accessing Variable
+      vars:
+        URL: task-level-variable
       debug:
         msg: URL = {{URL}} #Accessing Variable
