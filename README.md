@@ -1,6 +1,6 @@
 # ansible
 
-Generating key in master and adding key in worker/agent nodes.
+Generating key's in master and adding publick key to worker/agent nodes.
 
 *********************MASTER SERVER******************
 
