@@ -1,0 +1,8 @@
+- name: Variables Play
+  hosts: web
+  vars:
+    URL: play-level-variable #Declaring play level variable
+  tasks:
+    - name: Accessing Variable
+      debug:
+        msg: URL = {{URL}} #Accessing Variable
