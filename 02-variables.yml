@@ -21,6 +21,13 @@
       debug:
         msg: URL = {{URL}}
 
+- name: Declaring variables in inventory file and accessing variable
+  hosts: web
+  tasks:
+    - name: Accessing variable from inventory file
+      debug:
+        msg: URL = {{URL}}
+
 #Priority of Variables
 #Lower the number Higher the priority.
 #1. Task level Variable
