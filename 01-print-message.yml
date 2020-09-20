@@ -1,0 +1,4 @@
+- name: Printing Message
+  hosts: web
+  debug:
+    msg: Hello World!!
