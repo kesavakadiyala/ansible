@@ -2,7 +2,7 @@
 
 Generating key's in master and adding publick key to worker/agent nodes.
 
-*********************MASTER SERVER******************
+*********************MASTER SERVER*********************
 
 centos@Master ~$ pwd
 
@@ -18,7 +18,7 @@ centos@Master ~$ cat devops.pub
 
 #Copy content in pub file
 
-*********************WORKER/AGENT SERVER******************
+*********************WORKER/AGENT SERVER*********************
 
 centos@Worker ~$ pwd
 
@@ -30,7 +30,7 @@ centos@Worker ~$ vi authorized_keys
 
 #Paste the content which you coppied from master server devops.pub file.
 
-*********************MASTER SERVER******************
+*********************MASTER SERVER*********************
 
 centos@Master ~$pwd
 
@@ -40,6 +40,13 @@ centos@Master ~$ ssh -i devops <workerip>
 
 
 #You should able to conenct without any password.
+
+Commands for checking in ansible if connection is working fine or not:
+
+ansible -i hosts --list-hosts web  #Command for checking all the hosts on the web group.
+
+ansible -i hosts --private-key=/home/centos/devops -m ping web #Command for chekcing conenction between hosts of web group.
+
 
 ################################################################
 
