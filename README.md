@@ -43,6 +43,8 @@ centos@Master ~$ ssh -i devops <workerip>
 
 ################################################################
 
+Change IP's in hosts/inventory file according to your worker nodes.
+
 Commands for checking in ansible if connection is working fine or not.
 
 #Command for checking all the hosts on the web group:
