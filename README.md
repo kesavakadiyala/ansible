@@ -41,7 +41,9 @@ centos@Master ~$ ssh -i devops <workerip>
 
 #You should able to conenct without any password.
 
-Commands for checking in ansible if connection is working fine or not:
+################################################################
+
+Commands for checking in ansible if connection is working fine or not.
 
 #Command for checking all the hosts on the web group:
 
