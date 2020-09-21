@@ -43,9 +43,13 @@ centos@Master ~$ ssh -i devops <workerip>
 
 Commands for checking in ansible if connection is working fine or not:
 
-ansible -i hosts --list-hosts web  #Command for checking all the hosts on the web group.
+#Command for checking all the hosts on the web group:
 
-ansible -i hosts --private-key=/home/centos/devops -m ping web #Command for chekcing conenction between hosts of web group.
+ansible -i hosts --list-hosts web
+
+#Command for chekcing conenction between hosts of web group:
+
+ansible -i hosts --private-key=/home/centos/devops -m ping web
 
 
 ################################################################
