@@ -1,0 +1,12 @@
+- name: COnditionals
+  hosts: web
+  tasks:
+    - name: Checking unix Distribution and Version
+      debug:
+        msg: This is centos, Version 7
+      when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "7")
+
+    - name: Checking unix Distribution and Version
+        debug:
+          msg: This is not centos or Version 7
+        when: not (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "7")
