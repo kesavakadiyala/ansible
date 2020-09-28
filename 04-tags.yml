@@ -1,0 +1,13 @@
+- name: Tags
+  hosts: web
+  tasks:
+    - name: Frontend tag
+      debug:
+        msg: This is Frontend
+      tags: frontend
+    - name: Catalogue tag
+      debug:
+        msg: Catalogue tag
+      tags: catalogue
+
+# Run playbook by appending -t <TAG_NAME>
