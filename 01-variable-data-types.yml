@@ -1,0 +1,14 @@
+- name: Variable Data Types
+  hosts: web
+  vars:
+    NUMBER: 10
+    CHARACTERS: abc
+    BOOLEAN1: yes   # Booolean is either yes/no or true/false
+    BOOLEAN2: true
+    FLOAT: 10.0
+  tasks:
+    - name: Accessing Variables
+      debug:
+        msg: Number = {{NUMBER}}, CHARACTERS = {{CHARACTERS}}, BOOLEAN1 = {{BOOLEAN1}}, FLOAT = {{FLOAT}}
+
+## Observation :  During declaration ansible does not bother about data types same like shell. While you access them it bothers

@@ -28,7 +28,7 @@
       debug:
         msg: URL = {{URL}}
 
-- name: Accessing variables through prompt.
+- name: Accessing variables through prompt
   hosts: web
   vars_prompt:
     - name: URL
@@ -41,5 +41,22 @@
 
 #Priority of Variables
 #Lower the number Higher the priority.
+#0. Command line arguments given as -e VAR=DATA
 #1. Task level Variable
+#### Roles variables take precedence when you use roles.
 #2. Play level Variable
+# 3. vars_prompt
+# 4. vars
+# 5. Inventory
+
+- name: Registering Variables
+  hosts: all
+  tasks:
+    - name: Find files
+      find:
+        paths: /boot
+      register: OUTPUT
+
+    - name: Accessing registered variable
+      debug:
+        msg: OUTPUT = {{OUTPUT}}
