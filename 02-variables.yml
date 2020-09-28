@@ -8,7 +8,7 @@
         msg: URL = {{URL}} #Accessing Variable
     - name: Declaring and Accessing task level variable
       vars:
-        URL: task-level-variable.com
+        URL: task-level-variable.com # Task level variable
       debug:
         msg: URL = {{URL}}
 
@@ -25,6 +25,17 @@
   hosts: web
   tasks:
     - name: Accessing variable from inventory file
+      debug:
+        msg: URL = {{URL}}
+
+- name: Accessing variables through prompt.
+  hosts: web
+  vars_prompt:
+    - name: URL
+      prompt: Enter URL  # Script stops for providing variable value
+      private: no
+  tasks:
+    - name: Accessing Prompt Variable
       debug:
         msg: URL = {{URL}}
 
