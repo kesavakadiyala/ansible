@@ -19,7 +19,8 @@
     state: directory
 
 - name: Including artifacts download steps
-  include_role: common
+  include_role:
+  name: common
   tasks_from: artifact-download
 
 - name: Updating nginx configuration
