@@ -6,6 +6,8 @@
       import_role:
         name: common
         tasks_from: pre-checks
+      tags:
+        - frontend
 
     - name: frontend
       import_role:
