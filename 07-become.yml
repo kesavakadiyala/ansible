@@ -5,10 +5,9 @@
       command: who
       register: who
       become: true
-
     - name: Printing who
       debug:
-        msg: who.stdout_lines
+        msg: "{{who.stdout_lines}}"
 
 - name: Become
   hosts: localhost
@@ -18,7 +17,6 @@
       register: who
       become: true
       become_user: centos
-
     - name: Printing who
         debug:
-          msg: who.stdout_lines
+          msg: "{{who.stdout_lines}}"
