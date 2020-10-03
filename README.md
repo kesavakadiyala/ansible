@@ -69,3 +69,38 @@ Running playbooks:
     Example: In my case I had key file in /home/centos/devops
   
     ansible-playbook --private-key=/home/centos/devops -i hosts 01-print-message.yml
+    
+# Role directory structure:
+
+roles/
+    common/
+        tasks/
+        handlers/
+        library/
+        files/
+        templates/
+        vars/
+        defaults/
+        meta/
+    webservers/
+        tasks/
+        defaults/
+        meta/
+        
+By default Ansible will look in each directory within a role for a main.yml file for relevant content (also main.yaml and main):
+
+1) tasks/main.yml - the main list of tasks that the role executes.
+
+2) handlers/main.yml - handlers, which may be used within or outside this role.
+
+3) library/my_module.py - modules, which may be used within this role (see Embedding modules and plugins in roles for more information).
+
+4) defaults/main.yml - default variables for the role (see Using Variables for more information). These variables have the lowest priority of any variables available, and can be easily overridden by any other variable, including inventory variables.
+
+5) vars/main.yml - other variables for the role (see Using Variables for more information).
+
+6) files/main.yml - files that the role deploys.
+
+7) templates/main.yml - templates that the role deploys.
+
+8) meta/main.yml - metadata for the role, including role dependencies.
