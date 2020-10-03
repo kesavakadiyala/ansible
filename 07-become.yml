@@ -1,14 +1,16 @@
 - name: Become
   hosts: localhost
   tasks:
-    debug:
-      msg: Become root user
-    become: true
+    - name: Become root user
+      debug:
+        msg: Become root user
+      become: true
 
 - name: Become
   hosts: localhost
   tasks:
-    debug:
-      msg: Become centos user
-    become: true
-    become_user: centos
+    - name: Become centos user
+      debug:
+        msg: Become centos user
+      become: true
+      become_user: centos
