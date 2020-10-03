@@ -18,5 +18,5 @@
       become_user: centos
       register: who
     - name: Printing register variable
-        debug:
-          msg: user = {{who.stdout_lines}}
+      debug:
+        msg: user = {{who.stdout_lines}}
