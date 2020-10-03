@@ -5,6 +5,7 @@
       debug:
         msg: Become root user
       become: true
+      command: who
 
 - name: Become
   hosts: localhost
@@ -14,3 +15,4 @@
         msg: Become centos user
       become: true
       become_user: centos
+      command: who
