@@ -1,0 +1,3 @@
+COMPONENT: frontend
+ARTIFACT_PATH: /usr/share/nginx/html
+CATALOGUE_HOST: catalogue.kesavakadiyala.tech

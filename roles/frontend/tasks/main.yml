@@ -7,3 +7,29 @@
   include_role:
     name: common
     tasks_from: az-cli-setup
+
+- name: Removing old htdocs
+  file:
+    path: {{ARTIFACT_PATH}}
+    state: absent
+
+- name: Creating htdocs directory
+  file:
+    path : {{ARTIFACT_PATH}}
+    state: directory
+
+- name: Including artifacts download steps
+  include_role: common
+  tasks_from: artifact-download
+
+- name: Updating nginx configuration
+  template:
+    src: nginx.conf
+    desc: /etc/nginx/nginx.conf
+  notify: Restart Nginx
+
+- name: Start Nginx Service
+  systemd:
+    name: nginx
+    state: started
+    enabled: yes
