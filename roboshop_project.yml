@@ -1,0 +1,10 @@
+- name: Roboshop Project ansible
+  hosts: all
+  become: true
+  tasks:
+    - name: frontend
+      import_role:
+        name: frontend
+      when: component == "frontend"
+      tags:
+        - frontend
