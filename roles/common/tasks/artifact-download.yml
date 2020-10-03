@@ -1,2 +1,2 @@
-- name: Downloading Azure articats
+- name: Downloading Azure artifacts
   shell: az artifacts universal download --organization "https://dev.azure.com/KesavaKadiyala/" --project "a5039393-a1c4-4089-97e8-8f43f6af7cd5" --scope project --feed "Project" --name {{COMPONENT}} --version "*" --path {{ARTIFACT_PATH}}
