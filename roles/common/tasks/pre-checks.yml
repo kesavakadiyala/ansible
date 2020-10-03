@@ -1,4 +1,4 @@
-- name: Checking PAT cariable
+- name: Checking PAT variable
   when: PAT is undefined
   fail:
     msg: PAT variable is not defined

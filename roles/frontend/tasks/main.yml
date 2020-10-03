@@ -26,7 +26,7 @@
 - name: Updating nginx configuration
   template:
     src: nginx.conf
-    desc: /etc/nginx/nginx.conf
+    dest: /etc/nginx/nginx.conf
   notify: Restart Nginx
 
 - name: Start Nginx Service
