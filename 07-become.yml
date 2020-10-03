@@ -3,12 +3,22 @@
   tasks:
     - name: Become root user
       command: who
+      register: who
       become: true
+
+    - name: Printing who
+      debug:
+        msg: who.stdout_lines
 
 - name: Become
   hosts: localhost
   tasks:
     - name: Become centos user
       command: who
+      register: who
       become: true
       become_user: centos
+
+    - name: Printing who
+        debug:
+          msg: who.stdout_lines
