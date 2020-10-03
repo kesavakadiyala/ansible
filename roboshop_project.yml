@@ -5,7 +5,7 @@
     - name: Precehcks
       import_role:
         name: common
-        tasks_from: prechecks
+        tasks_from: pre-checks
 
     - name: frontend
       import_role:
