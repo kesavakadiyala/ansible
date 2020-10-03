@@ -18,5 +18,5 @@
       become: true
       become_user: centos
     - name: Printing who
-        debug:
-          msg: "{{who.stdout_lines}}"
+      debug:
+        msg: "{{who.stdout_lines}}"
