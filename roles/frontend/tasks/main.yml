@@ -20,8 +20,8 @@
 
 - name: Including artifacts download steps
   include_role:
-  name: common
-  tasks_from: artifact-download
+    name: common
+    tasks_from: artifact-download
 
 - name: Updating nginx configuration
   template:
