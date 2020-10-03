@@ -2,3 +2,8 @@
   yum:
     name: nginx
     state: latest
+
+- name: Including AZ CLI instalation steps
+  include_role:
+    name: common
+    tasks_from: az-cli-setup
