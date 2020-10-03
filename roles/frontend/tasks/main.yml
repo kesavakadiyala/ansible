@@ -15,7 +15,7 @@
 
 - name: Creating htdocs directory
   file:
-    path : "{{ARTIFACT_PATH}}"
+    path: "{{ARTIFACT_PATH}}"
     state: directory
 
 - name: Including artifacts download steps
