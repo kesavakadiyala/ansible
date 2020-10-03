@@ -10,7 +10,7 @@
 
 - name: Removing old htdocs
   file:
-    path: {{ARTIFACT_PATH}}
+    path: "{{ARTIFACT_PATH}}"
     state: absent
 
 - name: Creating htdocs directory
