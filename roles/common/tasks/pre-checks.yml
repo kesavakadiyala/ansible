@@ -12,4 +12,4 @@
   shell: set-hostname {{component}}
 
 - name: Disabling auto shutdown
-  shell disable-auto-shutdown
+  shell: disable-auto-shutdown
