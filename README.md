@@ -73,18 +73,31 @@ Running playbooks:
 # Role directory structure:
 
 roles/
+
     common/
+    
         tasks/
+        
         handlers/
+        
         library/
+        
         files/
+        
         templates/
+        
         vars/
+        
         defaults/
+        
         meta/
+        
     webservers/
+    
         tasks/
+        
         defaults/
+        
         meta/
         
 By default Ansible will look in each directory within a role for a main.yml file for relevant content (also main.yaml and main):
