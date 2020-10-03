@@ -1,5 +1,6 @@
 #Ansible allows you to ‘become’ another user, different from the user that logged into the machine (remote user).
 - name: Become
+  hosts: localhost
   debug:
     msg: Become root user
   become: true
