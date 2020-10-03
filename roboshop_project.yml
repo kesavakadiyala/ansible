@@ -2,6 +2,11 @@
   hosts: all
   become: true
   tasks:
+    - name: Precehcks
+      import_role:
+        name: common
+        tasks_from: prechecks
+
     - name: frontend
       import_role:
         name: frontend

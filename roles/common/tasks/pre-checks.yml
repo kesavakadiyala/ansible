@@ -1,0 +1,15 @@
+- name: Checking PAT cariable
+  when: PAT is undefined
+  fail:
+    msg: PAT variable is not defined
+
+- name: Checking component Variable
+  when: component is undefined
+  fail:
+    msg: component variable is not defined
+
+- name: setting hostname
+  shell: set-hostname {{component}}
+
+- name: Disabling auto shutdown
+  shell disable-auto-shutdown
