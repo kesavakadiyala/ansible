@@ -2,13 +2,21 @@
   hosts: localhost
   tasks:
     - name: Become root user
-      command: who
+      command: whoami
       become: true
+      register: who
+    - name: Printing register variable
+      debug:
+        msg: user = {{who.stdout_lines}}
 
 - name: Become
   hosts: localhost
   tasks:
     - name: Become centos user
-      command: who
+      command: whoami
       become: true
       become_user: centos
+      register: who
+    - name: Printing register variable
+        debug:
+          msg: user = {{who.stdout_lines}}
