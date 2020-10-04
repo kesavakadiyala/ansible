@@ -46,7 +46,7 @@
     name: common
     tasks_from: az-cli-setup
 
-- name: Creating user directory
+- name: Creating mysql directory
   file:
     path: "{{ARTIFACT_PATH}}"
     state: directory

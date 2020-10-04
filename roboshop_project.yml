@@ -14,6 +14,7 @@
         - user
         - cart
         - mysql
+        - shipping
 
     - name: frontend
       import_role:
@@ -63,3 +64,10 @@
       when: component == "mysql"
       tags:
         - mysql
+
+    - name: shipping
+      import_role:
+        name: shipping
+      when: component == "shipping"
+      tags:
+        - shipping
