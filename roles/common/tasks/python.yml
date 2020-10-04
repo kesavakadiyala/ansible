@@ -4,7 +4,7 @@
     state: present
 
 - name: Including application user creation role
-  include_tasks: application-user
+  include_tasks: application-user.yml
 
 - name: Including AZ CLI Installation Steps
   include_tasks: az-cli-setup.yml
