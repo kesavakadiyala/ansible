@@ -13,6 +13,7 @@
         - redis
         - user
         - cart
+        - mysql
 
     - name: frontend
       import_role:
@@ -55,3 +56,10 @@
       when: component == "cart"
       tags:
         - cart
+
+    - name: mysql
+      import_role:
+        name: mysql
+      when: component == "mysql"
+      tags:
+        - mysql
