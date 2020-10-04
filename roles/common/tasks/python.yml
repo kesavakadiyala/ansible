@@ -1,0 +1,23 @@
+- name: Installing Python
+  yum:
+    name: ["python36", "gcc", "python3-devel"]
+    state: present
+
+- name: Including application user creation role
+  include_tasks: application-user
+
+- name: Including AZ CLI Installation Steps
+  include_tasks: az-cli-setup.yml
+
+- name: Create Artifact directory
+  file:
+    path: "{{ARTIFACT_PATH}}"
+    state: directory
+
+- name: Including Artifact Download Steps
+  include_tasks: artifact-download.yml
+
+- name: Installing python requirements
+  pip:
+    requirements: "{{ARTIFACT_PATH}}/requirements.txt"
+    executable: pip3

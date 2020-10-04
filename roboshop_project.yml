@@ -16,6 +16,7 @@
         - mysql
         - shipping
         - rabbitmq
+        - payment
 
     - name: frontend
       import_role:
@@ -79,3 +80,10 @@
       when: component == "rabbitmq"
       tags:
         - rabbitmq
+
+    - name: payment
+      import_role:
+        name: payment
+      when: component == "payment"
+      tags:
+        - payment

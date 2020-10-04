@@ -1,0 +1,16 @@
+- name: Including Steps for Python
+  include_role:
+    name: common
+    tasks_from: python
+
+- name: Setting Payment Service
+  template:
+    src: payment.service
+    dest: /etc/systemd/system/payment.service
+
+- name: Start Payment Service
+  systemd:
+    name: payment
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
