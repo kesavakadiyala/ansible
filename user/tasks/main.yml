@@ -24,7 +24,7 @@
     tasks_from: artifact-download
 
 - name: Configuring user service
-  file:
+  template:
     src: user.service
     dest: /etc/systemd/system/user.service
 
