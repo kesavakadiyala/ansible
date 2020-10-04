@@ -10,6 +10,7 @@
         - frontend
         - catalogue
         - mongodb
+        - redis
 
     - name: frontend
       import_role:
@@ -31,3 +32,10 @@
       when: component == "mongodb"
       tags:
         - mongodb
+
+    - name: redis
+      import_role:
+        name: redis
+      when: component == "redis"
+      tags:
+        - redis
