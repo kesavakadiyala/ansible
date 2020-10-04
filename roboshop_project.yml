@@ -18,8 +18,8 @@
         - frontend
 
     - name: catalogue
-        import_role:
-          name: catalogue
-        when: component == "catalogue"
-        tags:
-          - catalogue
+      import_role:
+        name: catalogue
+      when: component == "catalogue"
+      tags:
+        - catalogue
