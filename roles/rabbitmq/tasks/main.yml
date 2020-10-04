@@ -16,3 +16,6 @@
     name: rabbitmq-server
     state: started
     enabled: yes
+
+- name: Creating application user
+  shell: rabbitmqctl add_user roboshop roboshop123; rabbitmqctl set_user_tags roboshop administrator; rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
