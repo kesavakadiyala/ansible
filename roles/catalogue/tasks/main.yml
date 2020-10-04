@@ -23,4 +23,4 @@
 - name: Downloading artifacts from azure
   include_role:
     name: common
-    tasks-from: artifact-download
+    tasks_from: artifact-download
