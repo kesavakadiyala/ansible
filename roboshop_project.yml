@@ -2,7 +2,7 @@
   hosts: all
   become: true
   tasks:
-    - name: Precehcks
+    - name: Prechecks
       import_role:
         name: common
         tasks_from: pre-checks
