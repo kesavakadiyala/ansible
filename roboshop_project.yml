@@ -23,3 +23,10 @@
       when: component == "catalogue"
       tags:
         - catalogue
+
+    - name: mongodb
+      import_role:
+        name: mongodb
+      when: component == "mongodb"
+      tags:
+        - mongodb
