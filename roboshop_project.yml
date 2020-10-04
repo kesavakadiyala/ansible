@@ -12,6 +12,7 @@
         - mongodb
         - redis
         - user
+        - cart
 
     - name: frontend
       import_role:
@@ -47,3 +48,10 @@
       when: component == "user"
       tags:
         - user
+
+    - name: cart
+      import_role:
+        name: cart
+      when: component == "cart"
+      tags:
+        - cart

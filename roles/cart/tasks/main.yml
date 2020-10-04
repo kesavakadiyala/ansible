@@ -31,12 +31,12 @@
 
 - name: Configuring user service
   template:
-    src: user.service
-    dest: /etc/systemd/system/user.service
+    src: cart.service
+    dest: /etc/systemd/system/cart.service
 
-- name: Start User Service
+- name: Start Cart Service
   systemd:
-    name: user
+    name: cart
     state: restarted
     enabled: yes
     daemon_reload: yes
