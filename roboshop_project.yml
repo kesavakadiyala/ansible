@@ -11,6 +11,7 @@
         - catalogue
         - mongodb
         - redis
+        - user
 
     - name: frontend
       import_role:
@@ -39,3 +40,10 @@
       when: component == "redis"
       tags:
         - redis
+
+    - name: user
+      import_role:
+        name: user
+      when: component == "user"
+      tags:
+        - user

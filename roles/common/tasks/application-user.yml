@@ -1,0 +1,3 @@
+- name: Adding application user
+  user:
+    name: roboshop

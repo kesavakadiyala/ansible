@@ -1,0 +1,36 @@
+- name: Including Nodejs Installation
+  include_role:
+    name: common
+    tasks_from: nodejs-installation
+
+- name: Including application user creation role
+  include_role:
+    name: common
+    tasks_from: application-user
+
+- name: Including AZ cli Installation steps
+  include_role:
+    name: common
+    tasks_from: az-cli-setup
+
+- name: Creating user directory
+  file:
+    path: "{{ARTIFACT_PATH}}"
+    state: directory
+
+- name: Downloading artifacts from azure
+  include_role:
+    name: common
+    tasks_from: artifact-download
+
+- name: Configuring user service
+  file:
+    src: user.service
+    dest: /etc/systemd/system/user.service
+
+- name: Start User Service
+  systemd:
+    name: user
+    state: restarted
+    enabled: yes
+    daemon_reload: yes

@@ -1,19 +1,17 @@
-- name: Installing nodeJs and dependencies
-  yum:
-    name:
-      - nodejs
-      - make
-      - gcc-c++
-    state: latest
+- name: Including Nodejs Installation
+  include_role:
+    name: common
+    tasks_from: nodejs-installation
 
 - name: Including AZ cli Installation steps
   include_role:
     name: common
     tasks_from: az-cli-setup
 
-- name: Adding application user
-  user:
-    name: roboshop
+- name: Including application user creation role
+  include_role:
+    name: common
+    tasks_from: application-user
 
 - name: Creating catalogue directory
   file:
