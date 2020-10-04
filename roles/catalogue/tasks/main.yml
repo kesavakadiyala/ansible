@@ -17,7 +17,7 @@
 
 - name: Creating catalogue directory
   file:
-    path: {{ARTIFACT_PATH}}
+    path: "{{ARTIFACT_PATH}}"
     state: directory
 
 - name: Downloading artifacts from azure
