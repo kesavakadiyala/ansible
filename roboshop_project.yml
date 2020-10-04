@@ -15,6 +15,7 @@
         - cart
         - mysql
         - shipping
+        - rabbitmq
 
     - name: frontend
       import_role:
@@ -71,3 +72,10 @@
       when: component == "shipping"
       tags:
         - shipping
+
+    - name: rabbitmq
+      import_role:
+        name: rabbitmq
+      when: component == "rabbitmq"
+      tags:
+        - rabbitmq
