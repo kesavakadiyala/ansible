@@ -24,3 +24,21 @@
   include_role:
     name: common
     tasks_from: artifact-download
+
+- name: Changing permissions of project directory
+  file:
+    path: "{{ARTIFACT_PATH}}"
+    owner: roboshop
+    group: roboshop
+
+- name: Updating catalogue configuration
+  template:
+    src: catalogue.service
+    dest: /etc/systemd/system/catalogue.service
+
+- name: Starting Catalogue application
+  systemd:
+    name: Catalogue
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
