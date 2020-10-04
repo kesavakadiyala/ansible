@@ -8,6 +8,7 @@
         tasks_from: pre-checks
       tags:
         - frontend
+        - catalogue
 
     - name: frontend
       import_role:
@@ -15,3 +16,10 @@
       when: component == "frontend"
       tags:
         - frontend
+
+    - name: catalogue
+        import_role:
+          name: catalogue
+        when: component == "catalogue"
+        tags:
+          - catalogue
