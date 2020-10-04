@@ -1,0 +1,26 @@
+- name: Installing nodeJs and dependencies
+  yum:
+    name:
+      - nodejs
+      - make
+      - gcc-c++
+    state: latest
+
+- name: Including AZ cli Installation steps
+  include_role:
+    name: common
+    tasks_from: az-cli-setup
+
+- name: Adding application user
+  user:
+    name: roboshop
+
+- name: Creating catalogue directory
+  file:
+    path: {{ARTIFACT_PATH}}
+    state: directory
+
+- name: Downloading artifacts from azure
+  include_role:
+    name: common
+    tasks-from: artifact-download
