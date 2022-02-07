@@ -1,14 +1,14 @@
 - name: Installing Erlang for rabbitmq
   yum:
-    name: https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_22.2.1-1~centos~7_amd64.rpm
+    name: https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_24.0.2-1~centos~7_amd64.rpm
     state: latest
 
 - name: Setting RabbitMQ Repos
-  shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
+  shell: curl -s https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.8.19/rabbitmq-server-3.8.19-1.el7.noarch.rpm | sudo bash
 
 - name: Installing Rabbitmq
   yum:
-      name: rabbitmq-server
+      name: rabbitmq-server*.rpm
       state: present
 
 - name: Start RabbitMQ
