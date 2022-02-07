@@ -8,7 +8,7 @@
 
 - name: Installing Rabbitmq
   yum:
-      name: ~/rabbitmq-server*.rpm
+      name: rabbitmq-server-3.8.19-1.el7.noarch.rpm
       state: present
 
 - name: Start RabbitMQ
