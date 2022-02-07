@@ -18,12 +18,12 @@
         - rabbitmq
         - payment
 
-    - name: "{{component}}"
+    - name: "{{COMPONENT}}"
       import_role:
-        name: "{{component}}"
-      when: component == "{{component}}"
+        name: "{{COMPONENT}}"
+      when: COMPONENT == "{{COMPONENT}}"
       tags:
-        - "{{component}}"
+        - "{{COMPONENT}}"
 
 #    - name: frontend
 #      import_role:
