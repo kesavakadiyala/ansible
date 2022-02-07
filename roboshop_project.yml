@@ -96,3 +96,5 @@
       when: component == "payment"
       tags:
         - payment
+
+#ansible-playbook -i /tmp/hosts -u centos --private-key ../devops -e PAT=<Azure Access Key> roboshop_project.yml -t <Tag>>
