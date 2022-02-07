@@ -18,81 +18,81 @@
         - rabbitmq
         - payment
 
-    - name: Import {{component}} role
-      import_role:
-        name: "{{component}}"
-      when: component == "{{COMPONENT}}"
-      tags:
-        - "{{component}}"
-      vars:
-        COMPONENT: "{{component}}"
+#    - name: Import {{component}} role
+#      import_role:
+#        name: "{{component}}"
+#      when: component == "{{COMPONENT}}"
+#      tags:
+#        - "{{component}}"
+#      vars:
+#        COMPONENT: "{{component}}"
 
-#    - name: frontend
-#      import_role:
-#        name: frontend
-#      when: component == "frontend"
-#      tags:
-#        - frontend
-#
-#    - name: catalogue
-#      import_role:
-#        name: catalogue
-#      when: component == "catalogue"
-#      tags:
-#        - catalogue
-#
-#    - name: mongodb
-#      import_role:
-#        name: mongodb
-#      when: component == "mongodb"
-#      tags:
-#        - mongodb
-#
-#    - name: redis
-#      import_role:
-#        name: redis
-#      when: component == "redis"
-#      tags:
-#        - redis
-#
-#    - name: user
-#      import_role:
-#        name: user
-#      when: component == "user"
-#      tags:
-#        - user
-#
-#    - name: cart
-#      import_role:
-#        name: cart
-#      when: component == "cart"
-#      tags:
-#        - cart
-#
-#    - name: mysql
-#      import_role:
-#        name: mysql
-#      when: component == "mysql"
-#      tags:
-#        - mysql
-#
-#    - name: shipping
-#      import_role:
-#        name: shipping
-#      when: component == "shipping"
-#      tags:
-#        - shipping
-#
-#    - name: rabbitmq
-#      import_role:
-#        name: rabbitmq
-#      when: component == "rabbitmq"
-#      tags:
-#        - rabbitmq
-#
-#    - name: payment
-#      import_role:
-#        name: payment
-#      when: component == "payment"
-#      tags:
-#        - payment
+    - name: frontend
+      import_role:
+        name: frontend
+      when: component == "frontend"
+      tags:
+        - frontend
+
+    - name: catalogue
+      import_role:
+        name: catalogue
+      when: component == "catalogue"
+      tags:
+        - catalogue
+
+    - name: mongodb
+      import_role:
+        name: mongodb
+      when: component == "mongodb"
+      tags:
+        - mongodb
+
+    - name: redis
+      import_role:
+        name: redis
+      when: component == "redis"
+      tags:
+        - redis
+
+    - name: user
+      import_role:
+        name: user
+      when: component == "user"
+      tags:
+        - user
+
+    - name: cart
+      import_role:
+        name: cart
+      when: component == "cart"
+      tags:
+        - cart
+
+    - name: mysql
+      import_role:
+        name: mysql
+      when: component == "mysql"
+      tags:
+        - mysql
+
+    - name: shipping
+      import_role:
+        name: shipping
+      when: component == "shipping"
+      tags:
+        - shipping
+
+    - name: rabbitmq
+      import_role:
+        name: rabbitmq
+      when: component == "rabbitmq"
+      tags:
+        - rabbitmq
+
+    - name: payment
+      import_role:
+        name: payment
+      when: component == "payment"
+      tags:
+        - payment
