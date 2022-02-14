@@ -40,3 +40,7 @@
     state: restarted
     enabled: yes
     daemon_reload: yes
+
+- name: Include Prometheus Role
+  include_role:
+    name: prometheus
