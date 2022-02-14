@@ -1,0 +1,18 @@
+- name: Download Node_Exporter
+  unarchive:
+    src: "{{URL}}"
+    dest: /opt
+    remote_src: yes
+
+- name: Copy systemd file
+  template:
+    src: node_exporter.service
+    dest: /etc/systemd/system
+  notify: Retart Node Exporter
+
+- name: Start Node Exporter
+  systemd:
+    name: node_exporter
+    daemon-reload: yes
+    start: started
+    enabled: yes
