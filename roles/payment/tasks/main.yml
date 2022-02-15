@@ -3,6 +3,11 @@
     name: common
     tasks_from: python
 
+- name: Including rsyslog role
+  include_role:
+    name: common
+    tasks_from: rsyslog
+
 - name: Setting Payment Service
   template:
     src: payment.service

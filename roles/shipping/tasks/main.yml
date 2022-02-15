@@ -3,6 +3,11 @@
     name: common
     tasks_from: maven
 
+- name: Including rsyslog role
+  include_role:
+    name: common
+    tasks_from: rsyslog
+
 - name: Setup Shipping Service
   template:
     src: shipping.service
