@@ -131,7 +131,7 @@ setup.ilm.enabled: false
 
 output.elasticsearch:
   # Array of hosts to connect to.
-  hosts: ["172.31.46.131:9200"]
+  hosts: ["172.31.39.193:9200"]
   index: "{{COMPONENT}}-%{+yyyy.MM.dd}"
 
   # Protocol - either `http` (default) or `https`.
@@ -145,7 +145,7 @@ output.elasticsearch:
   # ------------------------------ Logstash Output -------------------------------
 output.logstash:
   # The Logstash hosts
-  hosts: ["172.31.46.131:5044"]
+  hosts: ["172.31.39.193:5044"]
 {% endif %}
 # ================================= Processors =================================
 processors:
