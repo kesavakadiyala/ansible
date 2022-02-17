@@ -143,7 +143,7 @@ output.elasticsearch:
   #password: "changeme"
 {% else %}
   # ------------------------------ Logstash Output -------------------------------
-  output.logstash:
+output.logstash:
   # The Logstash hosts
   hosts: ["172.31.46.131:5044"]
 {% endif %}
