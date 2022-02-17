@@ -53,3 +53,5 @@
 - name: Include File Beat Role
   include_role:
     name: filebeat
+#  vars:
+#    LOG_FILE = /var/log/
