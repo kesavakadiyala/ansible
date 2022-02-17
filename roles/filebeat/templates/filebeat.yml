@@ -26,15 +26,15 @@ filebeat.inputs:
 
     # Paths that should be crawled and fetched. Glob based paths.
     paths:
-      - /var/log/{{COMPONENT}}.log
+      #- /var/log/{{COMPONENT}}.log
       #- c:\programdata\elasticsearch\logs\*
     json.keys_under_root: true
     json.message_key: msg
     # Exclude lines. A list of regular expressions to match. It drops the lines that are
     # matching any regular expression from the list.
-#{% if {{COMPONENT == 'catalogue'}} or {{COMPONENT == 'cart'}} %}
-#    exclude_lines: ['DeprecationWarning','instana/collector']
-#{% endif %}
+{% if {{COMPONENT == 'catalogue'}} or {{COMPONENT == 'cart'}} %}
+    exclude_lines: ['DeprecationWarning','instana/collector']
+{% endif %}
     # Include lines. A list of regular expressions to match. It exports the lines that are
     # matching any regular expression from the list.
     #include_lines: ['^ERR', '^WARN']
