@@ -33,7 +33,7 @@ filebeat.inputs:
     # Exclude lines. A list of regular expressions to match. It drops the lines that are
     # matching any regular expression from the list.
 
-{% if (COMPONENT == 'catalogue') or (COMPONENT == 'cart') %}
+{% if (COMPONENT == 'catalogue') or (COMPONENT == 'cart') or (COMPONENT == 'user') %}
     exclude_lines: ['DeprecationWarning','instana/collector']
 {% endif %}
 
@@ -121,8 +121,8 @@ setup.kibana:
 
 # ---------------------------- Elasticsearch Output ----------------------------
 setup.template:
-  name: 'catalogue'
-  pattern: 'catalogue-*'
+  name: '{{COMPONENT}}'
+  pattern: '{{COMPONENT}}-*'
   enabled: false
 
 setup.ilm.enabled: false
@@ -130,7 +130,7 @@ setup.ilm.enabled: false
 output.elasticsearch:
   # Array of hosts to connect to.
   hosts: ["172.31.46.131:9200"]
-  index: "catalogue-%{+yyyy.MM.dd}"
+  index: "{{COMPONENT}}-%{+yyyy.MM.dd}"
   # Protocol - either `http` (default) or `https`.
   #protocol: "https"
 
