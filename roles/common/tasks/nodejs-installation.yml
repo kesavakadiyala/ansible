@@ -7,13 +7,13 @@
     state: latest
 
 - name: Including rsyslog role
-  include_tasks: rsyslog
+  include_tasks: rsyslog.yml
 
 - name: Including application {{ COMPONENT }} creation role
-  include_tasks: application-user
+  include_tasks: application-user.yml
 
 - name: Including AZ cli Installation steps
-  include_tasks: az-cli-setup
+  include_tasks: az-cli-setup.yml
 
 - name: Creating {{ COMPONENT }} directory
   file:
@@ -21,7 +21,7 @@
     state: directory
 
 - name: Downloading artifacts from azure
-  include_tasks: artifact-download
+  include_tasks: artifact-download.yml
 
 - name: Changing permissions of project directory
   file:
