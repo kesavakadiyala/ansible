@@ -6,7 +6,7 @@
 - name: Copying File Beat template
   template:
     src: filebeat.yml
-    temlate: /etc/filebeat/filebeat.yml
+    dest: /etc/filebeat/filebeat.yml
 
 - name: Restarting File Beat
   systemd:
