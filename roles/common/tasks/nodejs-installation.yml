@@ -5,3 +5,26 @@
       - make
       - gcc-c++
     state: latest
+
+- name: Including rsyslog role
+  include_tasks: rsyslog
+
+- name: Including application {{ COMPONENT }} creation role
+  include_tasks: application-user
+
+- name: Including AZ cli Installation steps
+  include_tasks: az-cli-setup
+
+- name: Creating {{ COMPONENT }} directory
+  file:
+    path: "{{ARTIFACT_PATH}}"
+    state: directory
+
+- name: Downloading artifacts from azure
+  include_tasks: artifact-download
+
+- name: Changing permissions of project directory
+  file:
+    path: "{{ARTIFACT_PATH}}"
+    owner: roboshop
+    group: roboshop

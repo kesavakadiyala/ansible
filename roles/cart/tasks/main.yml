@@ -3,38 +3,7 @@
     name: common
     tasks_from: nodejs-installation
 
-- name: Including rsyslog role
-  include_role:
-    name: common
-    tasks_from: rsyslog
-
-- name: Including application user creation role
-  include_role:
-    name: common
-    tasks_from: application-user
-
-- name: Including AZ cli Installation steps
-  include_role:
-    name: common
-    tasks_from: az-cli-setup
-
-- name: Creating user directory
-  file:
-    path: "{{ARTIFACT_PATH}}"
-    state: directory
-
-- name: Downloading artifacts from azure
-  include_role:
-    name: common
-    tasks_from: artifact-download
-
-- name: Changing permissions of project directory
-  file:
-    path: "{{ARTIFACT_PATH}}"
-    owner: roboshop
-    group: roboshop
-
-- name: Configuring user service
+- name: Configuring cart service
   template:
     src: cart.service
     dest: /etc/systemd/system/cart.service
