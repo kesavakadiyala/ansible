@@ -31,13 +31,10 @@ filebeat.inputs:
   {% else %}
       - /var/log/{{COMPONENT}}.log
   {% endif %}
-      #- c:\programdata\elasticsearch\logs\*
-    json.keys_under_root: true
-    json.message_key: msg
-    # Exclude lines. A list of regular expressions to match. It drops the lines that are
-    # matching any regular expression from the list.
 
 {% if (COMPONENT == 'catalogue') or (COMPONENT == 'cart') or (COMPONENT == 'user') %}
+    json.keys_under_root: true
+    json.message_key: msg
     exclude_lines: ['DeprecationWarning','instana/collector']
 {% endif %}
 
