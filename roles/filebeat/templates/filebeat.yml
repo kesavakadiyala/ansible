@@ -36,14 +36,16 @@ filebeat.inputs:
     json.keys_under_root: true
     json.message_key: msg
     exclude_lines: ['DeprecationWarning','instana/collector']
+{% elif COMPONENT == 'shipping' %}
+    include_lines: ['^.qtp']
 {% endif %}
     fields:
       component: {{COMPONENT}}
-{% if COMPONENT == 'shipping' %}
-    multiline.pattern: "^[A-Z][a-z][a-z]\ [0-9][0-9]"
-    multiline.negate: true
-    multiline.match: after
-{% endif %}
+#{% if COMPONENT == 'shipping' %}
+#    multiline.pattern: "^[A-Z][a-z][a-z]\ [0-9][0-9]"
+#    multiline.negate: true
+#    multiline.match: after
+#{% endif %}
 # Include lines. A list of regular expressions to match. It exports the lines that are
     # matching any regular expression from the list.
     #include_lines: ['^ERR', '^WARN']
