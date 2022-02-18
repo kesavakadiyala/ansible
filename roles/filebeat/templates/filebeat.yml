@@ -28,10 +28,10 @@ filebeat.inputs:
     paths:
   {% if (COMPONENT == 'frontend') %}
       - /var/log/nginx/access.log
-  {% else %}
-      - /var/log/{{COMPONENT}}.log
     fields:
       component: {{COMPONENT}}
+  {% else %}
+      - /var/log/{{COMPONENT}}.log
   {% endif %}
 
 {% if (COMPONENT == 'catalogue') or (COMPONENT == 'cart') or (COMPONENT == 'user') %}
