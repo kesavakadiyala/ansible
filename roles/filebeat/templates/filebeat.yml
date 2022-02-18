@@ -30,6 +30,8 @@ filebeat.inputs:
       - /var/log/nginx/access.log
   {% else %}
       - /var/log/{{COMPONENT}}.log
+    fields:
+      component: {{COMPONENT}}
   {% endif %}
 
 {% if (COMPONENT == 'catalogue') or (COMPONENT == 'cart') or (COMPONENT == 'user') %}
