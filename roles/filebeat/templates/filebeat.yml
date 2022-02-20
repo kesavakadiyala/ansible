@@ -38,6 +38,8 @@ filebeat.inputs:
     exclude_lines: ['DeprecationWarning','instana/collector']
 {% elif COMPONENT == 'shipping' %}
     include_lines: ['^.qtp']
+{% elif COMPONENT == 'payment' %}
+    inlcude_lines: ["^.[0-9][0-9][0-9][0-9]"]
 {% endif %}
     fields:
       component: {{COMPONENT}}
