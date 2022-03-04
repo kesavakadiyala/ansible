@@ -1,7 +1,7 @@
 COMPONENT: frontend
 ARTIFACT_PATH: /usr/share/nginx/html
-CATALOGUE_HOST: catalogue.kesavakadiyala.tech
-USER_HOST: user.kesavakadiyala.tech
-CART_HOST: cart.kesavakadiyala.tech
-SHIPPING_HOST: shipping.kesavakadiyala.tech
-PAYMENT_HOST: payment.kesavakadiyala.tech
+CATALOGUE_HOST: catalogue-{{ENV}}.kesavakadiyala.tech
+USER_HOST: user-{{ENV}}.kesavakadiyala.tech
+CART_HOST: cart-{{ENV}}.kesavakadiyala.tech
+SHIPPING_HOST: shipping-{{ENV}}.kesavakadiyala.tech
+PAYMENT_HOST: payment-{{ENV}}.kesavakadiyala.tech
