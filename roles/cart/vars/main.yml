@@ -1,4 +1,4 @@
 COMPONENT: cart
 ARTIFACT_PATH: /home/roboshop/cart
-REDIS_ENDPOINT: redis.kesavakadiyala.tech
-CATALOGUE_ENDPOINT: catalogue.kesavakadiyala.tech
+REDIS_ENDPOINT: redis-{{ENV}}.kesavakadiyala.tech
+CATALOGUE_ENDPOINT: catalogue-{{ENV}}.kesavakadiyala.tech
