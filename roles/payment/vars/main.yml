@@ -1,6 +1,6 @@
 COMPONENT: "payment"
 ARTIFACT_PATH: /home/roboshop/{{COMPONENT}}
-CART_HOST: cart.kesavakadiyala.tech
+CART_ENDPOINT: cart.kesavakadiyala.tech
 USER_HOST: user.kesavakadiyala.tech
 AMQP_HOST: rabbitmq.kesavakadiyala.tech
 AMQP_USER: roboshop
