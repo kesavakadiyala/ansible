@@ -2,6 +2,8 @@
   include_role:
     name: common
     tasks_from: python
+  vars:
+    component_id: b08099d4-bf7d-43cb-b17b-14a83db56aac
 
 - name: Including rsyslog role
   include_role:

@@ -2,6 +2,8 @@
   include_role:
     name: common
     tasks_from: nodejs-installation
+  vars:
+    component_id: ece41859-9336-4905-8f41-5833303293d4
 
 - name: Configuring user service
   template:

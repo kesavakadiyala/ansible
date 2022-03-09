@@ -2,6 +2,8 @@
   include_role:
     name: common
     tasks_from: maven
+  vars:
+    component_id: 45e7f3a0-c4d1-4cd3-8b31-4581f65ec775
 
 - name: Including rsyslog role
   include_role:

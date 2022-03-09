@@ -2,6 +2,8 @@
   include_role:
     name: common
     tasks_from: nodejs-installation
+  vars:
+    component_id: 84ff9b8e-fa0e-4c94-a2c2-dee2485aed61
 
 - name: Configuring cart service
   template:

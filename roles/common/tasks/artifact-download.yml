@@ -1,2 +1,37 @@
+- name: Grab Version for Dev
+  shell: curl -s https://feeds.dev.azure.com/KesavaKadiyala/a5039393-a1c4-4089-97e8-8f43f6af7cd5/_apis/Packaging/Feeds/150bad73-bfde-4359-9c4d-338b51d66a9b/Packages/{{component_id}}/versions?api-version=6.0-preview.1 | jq '.value[] | .version +" " + .views[].name' | grep Local | head -1 | xargs | awk '{print $1}'
+  when: ENV == "dev"
+  register: dev_version
+
+- name: Grab Version for PreProd
+  shell: curl -s https://feeds.dev.azure.com/KesavaKadiyala/a5039393-a1c4-4089-97e8-8f43f6af7cd5/_apis/Packaging/Feeds/150bad73-bfde-4359-9c4d-338b51d66a9b/Packages/{{component_id}}/versions?api-version=6.0-preview.1 | jq '.value[] | .version +" " + .views[].name' | grep Prerelease | head -1 | xargs | awk '{print $1}'
+  when: ENV == "qa"
+  register: qa_version
+
+- name: Grab Version for PROD
+  shell: curl -s https://feeds.dev.azure.com/KesavaKadiyala/a5039393-a1c4-4089-97e8-8f43f6af7cd5/_apis/Packaging/Feeds/150bad73-bfde-4359-9c4d-338b51d66a9b/Packages/{{component_id}}/versions?api-version=6.0-preview.1 | jq '.value[] | .version +" " + .views[].name' | grep Release | head -1 | xargs | awk '{print $1}'
+  when: ENV == "prod"
+  register: prod_version
+
+- name: Declare Version
+  set_fact:
+    VERSION: "{{dev_version.stdout}}"
+  when: ENV == "dev"
+
+- name: Declare Version
+  set_fact:
+    VERSION: "{{qa_version.stdout}}"
+  when: ENV == "qa"
+
+- name: Declare Version
+  set_fact:
+    VERSION: "{{prod_version.stdout}}"
+  when: ENV == "prod"
+
+- name: Print Versionb
+  debug:
+    msg: "Downloading Version , {{VERSION}}"
+
+
 - name: Downloading Azure artifacts
-  shell: az artifacts universal download --organization "https://dev.azure.com/KesavaKadiyala/" --project "a5039393-a1c4-4089-97e8-8f43f6af7cd5" --scope project --feed "Project" --name {{COMPONENT}} --version "*" --path {{ARTIFACT_PATH}}
+  shell: az artifacts universal download --organization "https://dev.azure.com/KesavaKadiyala/" --project "a5039393-a1c4-4089-97e8-8f43f6af7cd5" --scope project --feed "Project" --name {{COMPONENT}} --version "{{VERSION}}" --path {{ARTIFACT_PATH}}

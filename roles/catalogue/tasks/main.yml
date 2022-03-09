@@ -2,6 +2,8 @@
   include_role:
     name: common
     tasks_from: nodejs-installation
+  vars:
+    component_id: 20c3f05a-eed3-4ba0-b871-9ee6c3b14884
 
 - name: Updating catalogue configuration
   template:

@@ -22,6 +22,8 @@
   include_role:
     name: common
     tasks_from: artifact-download
+  vars:
+    component_id: 0c61c8ae-b06f-4aa6-8b2f-0f2f042ae1e7
 
 - name: Updating nginx configuration
   template:
