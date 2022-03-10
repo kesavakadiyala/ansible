@@ -10,7 +10,7 @@
 
 - name: Grab Version for PROD
   shell: curl -s https://feeds.dev.azure.com/KesavaKadiyala/a5039393-a1c4-4089-97e8-8f43f6af7cd5/_apis/Packaging/Feeds/150bad73-bfde-4359-9c4d-338b51d66a9b/Packages/{{component_id}}/versions?api-version=6.0-preview.1 | jq '.value[] | .version +" " + .views[].name' | grep Release | head -1 | xargs | awk '{print $1}'
-  when: (ENV == "prod") and (omponent == "frontend" or component == "catalogue" or component == "user" or component == "cart" or component == "shipping" or component == "payment")
+  when: (ENV == "prod") and (component == "frontend" or component == "catalogue" or component == "user" or component == "cart" or component == "shipping" or component == "payment")
   register: prod_version
 
 - name: Declare Version
@@ -26,7 +26,7 @@
 - name: Declare Version
   set_fact:
     VERSION: "{{prod_version.stdout}}"
-  when: (ENV == "prod") and (omponent == "frontend" or component == "catalogue" or component == "user" or component == "cart" or component == "shipping" or component == "payment")
+  when: (ENV == "prod") and (component == "frontend" or component == "catalogue" or component == "user" or component == "cart" or component == "shipping" or component == "payment")
 
 - name: Print Versionb
   debug:
