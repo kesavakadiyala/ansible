@@ -33,6 +33,8 @@
   include_role:
     name: common
     tasks_from: artifact-download
+  vars:
+    component_id: 9720ff2d-f71d-437a-9f66-a8a9face2832
 
 - name: Load MongoDB Schema
   shell: mongo < {{ item }}

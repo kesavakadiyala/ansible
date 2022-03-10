@@ -55,6 +55,8 @@
   include_role:
     name: common
     tasks_from: artifact-download
+  vars:
+    component_id: 132585ce-e7d2-41b4-b432-9b9843af0204
 
 - name: Loading Schema
   community.mysql.mysql_db:
